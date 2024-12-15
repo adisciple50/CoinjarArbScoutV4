@@ -163,6 +163,7 @@ class Chain
     \n
     \n====
     \nstake: #{@start.pair.amount.to_f}
+    \nfinal result:#{@ending_result}
     \nprofit: #{@profit}
     \n- start id: #{@start.id} - price: #{start_price} - representative currency #{@start.display_currency} - amount in representative currency:#{@start_amount} - transaction direction: #{@start_trade_direction} - start result:#{@start_result}
     \n- middle id: #{@middle.id} - price: #{middle_price} -  representative currency #{@middle.display_currency} - amount in representative currency:#{@middle_amount} - transaction direction: #{@middle_trade_direction} - middle result:#{@middle_result} -
