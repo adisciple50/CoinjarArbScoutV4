@@ -7,11 +7,21 @@ require_relative "chain_factory"
 STAKE = 200.00
 START_CURRENCY = "GBP"
 
+
+
 fiat_currency_object = Currency.new(START_CURRENCY,STAKE)
-last_winner =
+last_winner = nil
 profit = 0
+
+SPINNER = ["+","x"]
+spinner_count = 0
 while profit <= 0
-  puts "Scanning ..."
+  puts "Scanning ...#{SPINNER[spinner_count]}"
+  if spinner_count >= SPINNER.count - 1
+    spinner_count = 0
+  else
+    spinner_count += 1
+  end
   all_products_parsed_json = PublicClient.new.get_all_products
   currency_factory = CurrencyFactory.new(all_products_parsed_json,fiat_currency_object)
   currency_factory.build
