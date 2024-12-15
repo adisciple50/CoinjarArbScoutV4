@@ -137,9 +137,16 @@ class Chain
   end
 
   def to_s
-    "profit:#{@profit}
+    "
+    \n
+    \n
+    \n====
+    \nstake: #{@start.pair.amount.to_f}
+    \nprofit: #{@profit}
     \n- start id: #{@start.id} - start result:#{@start_result} - transaction direction: #{@start_trade_direction}
     \n- middle id: #{@middle.id} - middle result:#{@middle_result} - transaction direction: #{@middle_trade_direction}
-    \n- end id: #{@ending.id} - end result:#{@ending_result} - transaction direction: #{@ending_trade_direction}"
+    \n- end id: #{@ending.id} - end result:#{@ending_result} - transaction direction: #{@ending_trade_direction}
+    \n====
+    "
   end
 end
