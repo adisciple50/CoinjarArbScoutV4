@@ -41,11 +41,11 @@ class Chain
   def floor(product,amount,buy_or_sell)
     if buy_or_sell == :buy
       tick_exp = product.determine_bid_tick_exponent[:tick_exponent].to_i * -1
-      puts "tick exponent is #{tick_exp}"
+      # puts "tick exponent is #{tick_exp}"
       amount.to_f.floor(tick_exp)
     else
       tick_exp = product.determine_ask_tick_exponent[:tick_exponent].to_i * -1
-      puts "tick exponent is #{tick_exp}"
+      # puts "tick exponent is #{tick_exp}"
       amount.to_f.floor(tick_exp)
     end
   end
@@ -102,7 +102,7 @@ class Chain
       @middle_dust = calculate_dust(@middle,@middle_result,:buy)
     elsif @middle_trade_direction == :sell
       floor = floor(@middle,@start_result,:sell)
-      puts "middle:#{floor}"
+      # puts "middle:#{floor}"
       @middle_result = sell(@middle,floor)
       @middle_fee = calculate_fee(@middle_result,:sell)
       if @middle.is_fiat_trade

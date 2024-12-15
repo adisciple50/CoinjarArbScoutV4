@@ -4,7 +4,7 @@ class ChainFactory
   def initialize(all_product_objects,fiat_currency_object,stake_amount)
     @start_currency = fiat_currency_object
     @stake = stake_amount
-    puts @stake
+    # puts @stake
     unless @start_currency.is_fiat?
       raise "start currency is not a fiat currency object - it is a #{@start_currency.class.name}"
     end
