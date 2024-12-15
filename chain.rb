@@ -75,12 +75,14 @@ class Chain
     start_trade_direction
     if @start_trade_direction == :buy
       @start_result = buy(@start,@start.pair.amount)
+      @start_amount = @start_result
       @start_fee = calculate_fee(@start_result,:buy)
       @start_result = apply_fiat_fee(@start_result)
       # @start.base.amount = @start_result
       @start_dust = calculate_dust(@start,@start_result,:buy)
     elsif @start_trade_direction == :sell
       @start_result = sell(@start,@start.base.amount)
+      @start_amount = @start_result
       @start_fee = calculate_fee(@start_result,:sell)
       @start_result = apply_fiat_fee(@start_result)
       # @start.pair.amount = @start_result
@@ -91,6 +93,7 @@ class Chain
     middle_trade_direction
     if @middle_trade_direction == :buy
       @middle_result = buy(@middle,floor(@middle,@start_result,:buy))
+      @middle_amount = @middle_result
       @middle_fee = calculate_fee(@middle_result,:buy)
       if @middle.is_fiat_trade
         @middle_result = apply_crypto_fee(@middle_result,:buy)
@@ -104,6 +107,7 @@ class Chain
       floor = floor(@middle,@start_result,:sell)
       # puts "middle:#{floor}"
       @middle_result = sell(@middle,floor)
+      @middle_amount = @middle_result
       @middle_fee = calculate_fee(@middle_result,:sell)
       if @middle.is_fiat_trade
         @middle_result = apply_crypto_fee(@middle_result,:buy)
@@ -118,6 +122,7 @@ class Chain
     ending_trade_direction
     if @ending_trade_direction == :buy
       @ending_result = buy(@ending,floor(@ending,@middle_result,:buy))
+      @ending_amount = @ending_result
       @ending_fee = calculate_fee(@ending_result,:buy)
       @ending_result = apply_fiat_fee(@ending_result)
       # @ending.pair.amount = @middle_result
@@ -125,6 +130,7 @@ class Chain
       @ending_dust = calculate_dust(@ending,@ending_result,:buy)
     elsif @ending_trade_direction == :sell
       @ending_result = sell(@ending,floor(@ending,@middle_result,:sell))
+      @ending_amount = @ending_result
       @ending_fee = calculate_fee(@ending_result,:sell)
       @ending_result = apply_fiat_fee(@ending_result)
       # @ending.base.amount = @middle_result
@@ -137,15 +143,30 @@ class Chain
   end
 
   def to_s
+    if @start_trade_direction == :buy
+      start_price = buy(@start,1)
+    else
+      start_price = sell(@start,1)
+    end
+    if @middle_trade_direction == :buy
+      middle_price = buy(@start,1)
+    else
+      middle_price = sell(@start,1)
+    end
+    if @ending_trade_direction == :buy
+      ending_price = buy(@start,1)
+    else
+      ending_price = sell(@start,1)
+    end
+
     "
-    \n
     \n
     \n====
     \nstake: #{@start.pair.amount.to_f}
     \nprofit: #{@profit}
-    \n- start id: #{@start.id} - start result:#{@start_result} - transaction direction: #{@start_trade_direction}
-    \n- middle id: #{@middle.id} - middle result:#{@middle_result} - transaction direction: #{@middle_trade_direction}
-    \n- end id: #{@ending.id} - end result:#{@ending_result} - transaction direction: #{@ending_trade_direction}
+    \n- start id: #{@start.id} - price: #{start_price} - amount:#{@start_amount} - transaction direction: #{@start_trade_direction} - start result:#{@start_result}
+    \n- middle id: #{@middle.id} - price: #{middle_price} - amount:#{@start_amount} - transaction direction: #{@middle_trade_direction} - middle result:#{@middle_result} -
+    \n- end id: #{@ending.id} - price: #{ending_price} - amount:#{@start_amount} - transaction direction: #{@ending_trade_direction} - end result:#{@ending_result}
     \n====
     "
   end
