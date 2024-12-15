@@ -40,9 +40,13 @@ class Chain
   end
   def floor(product,amount,buy_or_sell)
     if buy_or_sell == :buy
-      amount.to_f.floor(product.determine_bid_tick_exponent[:tick_exponent].to_i)
+      tick_exp = product.determine_bid_tick_exponent[:tick_exponent].to_i * -1
+      puts "tick exponent is #{tick_exp}"
+      amount.to_f.floor(tick_exp)
     else
-      amount.to_f.floor(product.determine_ask_tick_exponent[:tick_exponent].to_i)
+      tick_exp = product.determine_ask_tick_exponent[:tick_exponent].to_i * -1
+      puts "tick exponent is #{tick_exp}"
+      amount.to_f.floor(tick_exp)
     end
   end
   def calculate_dust(product,amount,buy_or_sell)
@@ -133,7 +137,8 @@ class Chain
   end
 
   def to_s
-    "profit:#{@profit} \n- start id: #{@start.id} - start result:#{@start_result} - transaction direction: #{@start_trade_direction}
+    "profit:#{@profit}
+    \n- start id: #{@start.id} - start result:#{@start_result} - transaction direction: #{@start_trade_direction}
     \n- middle id: #{@middle.id} - middle result:#{@middle_result} - transaction direction: #{@middle_trade_direction}
     \n- end id: #{@ending.id} - end result:#{@ending_result} - transaction direction: #{@ending_trade_direction}"
   end
