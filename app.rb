@@ -38,4 +38,4 @@ while profit <= 0
   profit = last_winner.profit
 end
 puts last_winner.to_s
-File.write('winner.txt',last_winner.to_s)
+File.write('winner.txt',last_winner.to_s,mode:'a')

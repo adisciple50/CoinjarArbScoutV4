@@ -33,18 +33,18 @@ class Chain
     end
   end
   def buy(product,amount)
-    amount / product.bid.to_f
+    amount / product.ask.to_f
   end
   def sell(product,amount)
-    amount * product.ask.to_f
+    amount * product.bid.to_f
   end
   def floor(product,amount,buy_or_sell)
     if buy_or_sell == :buy
-      tick_exp = product.determine_bid_tick_exponent[:tick_exponent].to_i * -1
+      tick_exp = product.determine_ask_tick_exponent[:tick_exponent].to_i * -1
       # puts "tick exponent is #{tick_exp}"
       amount.to_f.floor(tick_exp)
     else
-      tick_exp = product.determine_ask_tick_exponent[:tick_exponent].to_i * -1
+      tick_exp = product.determine_bid_tick_exponent[:tick_exponent].to_i * -1
       # puts "tick exponent is #{tick_exp}"
       amount.to_f.floor(tick_exp)
     end
@@ -144,19 +144,19 @@ class Chain
 
   def to_s
     if @start_trade_direction == :buy
-      start_price = buy(@start,1)
+      start_price = @start.ask
     else
-      start_price = sell(@start,1)
+      start_price = @start.bid
     end
     if @middle_trade_direction == :buy
-      middle_price = buy(@start,1)
+      middle_price = @middle.ask
     else
-      middle_price = sell(@start,1)
+      middle_price = @middle.bid
     end
     if @ending_trade_direction == :buy
-      ending_price = buy(@start,1)
+      ending_price = @ending.ask
     else
-      ending_price = sell(@start,1)
+      ending_price = @ending.bid
     end
 
     "
@@ -164,9 +164,9 @@ class Chain
     \n====
     \nstake: #{@start.pair.amount.to_f}
     \nprofit: #{@profit}
-    \n- start id: #{@start.id} - price: #{start_price} - amount:#{@start_amount} - transaction direction: #{@start_trade_direction} - start result:#{@start_result}
-    \n- middle id: #{@middle.id} - price: #{middle_price} - amount:#{@start_amount} - transaction direction: #{@middle_trade_direction} - middle result:#{@middle_result} -
-    \n- end id: #{@ending.id} - price: #{ending_price} - amount:#{@start_amount} - transaction direction: #{@ending_trade_direction} - end result:#{@ending_result}
+    \n- start id: #{@start.id} - price: #{start_price} - representative currency #{@start.display_currency} - amount in representative currency:#{@start_amount} - transaction direction: #{@start_trade_direction} - start result:#{@start_result}
+    \n- middle id: #{@middle.id} - price: #{middle_price} -  representative currency #{@middle.display_currency} - amount in representative currency:#{@middle_amount} - transaction direction: #{@middle_trade_direction} - middle result:#{@middle_result} -
+    \n- end id: #{@ending.id} - price: #{ending_price} -  representative currency #{@ending.display_currency} - amount in representative currency:#{@ending_amount} - transaction direction: #{@ending_trade_direction} - end result:#{@ending_result}
     \n====
     "
   end
