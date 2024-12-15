@@ -61,10 +61,10 @@ class Chain
     end
   end
   def apply_fiat_fee(amount)
-    fee= 1-0.1
+    fee= 1-0.001
     amount * fee
   end
-  def apply_crypto_fee(amount,buy_or_sell,maker=1,taker=1-0.06)
+  def apply_crypto_fee(amount,buy_or_sell,maker=1,taker=1-0.0006)
     if buy_or_sell == :buy
       amount * taker
     elsif buy_or_sell == :sell
