@@ -1,0 +1,20 @@
+
+    
+
+    
+
+    
+====
+    
+stake: 200.0
+    
+profit: 476.269
+    
+- start id: USDCGBP - start result:227.27272727272725 - transaction direction: buy
+    
+- middle id: INJUSDC - middle result:7.595358336427776 - transaction direction: buy
+    
+- end id: INJGBP - end result:676.269 - transaction direction: sell
+    
+====
+    
