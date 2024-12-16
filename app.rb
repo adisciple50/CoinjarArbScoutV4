@@ -38,7 +38,7 @@ while true
   winner = sorted[-1]
   last_winner = winner
   profit = last_winner.profit
-  if profit > 0
+  if profit
     ap last_winner.to_h
     File.write("winners/#{DateTime.now.to_s}.txt",last_winner.to_s,mode:'a')
     system('gst-play-1.0 /usr/share/sounds/Yaru/stereo/system-ready.oga')

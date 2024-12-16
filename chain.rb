@@ -75,14 +75,14 @@ class Chain
     start_trade_direction
     if @start_trade_direction == :buy
       @start_result = buy(@start,@start.pair.amount)
-      @start_amount = @start_result
+      @start_amount = floor(@start,@start_result,:buy)
       @start_fee = calculate_fee(@start_result,:buy)
       @start_result = apply_fiat_fee(@start_result)
       # @start.base.amount = @start_result
       @start_dust = calculate_dust(@start,@start_result,:buy)
     elsif @start_trade_direction == :sell
       @start_result = sell(@start,@start.base.amount)
-      @start_amount = @start_result
+      @start_amount = floor(@start,@start_result,:sell)
       @start_fee = calculate_fee(@start_result,:sell)
       @start_result = apply_fiat_fee(@start_result)
       # @start.pair.amount = @start_result
@@ -93,7 +93,7 @@ class Chain
     middle_trade_direction
     if @middle_trade_direction == :buy
       @middle_result = buy(@middle,floor(@middle,@start_result,:buy))
-      @middle_amount = @middle_result
+      @middle_amount = floor(@middle,@middle_result,:buy)
       @middle_fee = calculate_fee(@middle_result,:buy)
       if @middle.is_fiat_trade
         @middle_result = apply_crypto_fee(@middle_result,:buy)
@@ -107,7 +107,7 @@ class Chain
       floor = floor(@middle,@start_result,:sell)
       # puts "middle:#{floor}"
       @middle_result = sell(@middle,floor)
-      @middle_amount = @middle_result
+      @middle_amount = floor(@middle,@middle_result,:sell)
       @middle_fee = calculate_fee(@middle_result,:sell)
       if @middle.is_fiat_trade
         @middle_result = apply_crypto_fee(@middle_result,:buy)
@@ -122,7 +122,7 @@ class Chain
     ending_trade_direction
     if @ending_trade_direction == :buy
       @ending_result = buy(@ending,floor(@ending,@middle_result,:buy))
-      @ending_amount = @ending_result
+      @ending_amount = floor(@ending,@ending_result,:buy)
       @ending_fee = calculate_fee(@ending_result,:buy)
       @ending_result = apply_fiat_fee(@ending_result)
       # @ending.pair.amount = @middle_result
@@ -130,7 +130,7 @@ class Chain
       @ending_dust = calculate_dust(@ending,@ending_result,:buy)
     elsif @ending_trade_direction == :sell
       @ending_result = sell(@ending,floor(@ending,@middle_result,:sell))
-      @ending_amount = @ending_result
+      @ending_amount = floor(@ending,@ending_result,:sell)
       @ending_fee = calculate_fee(@ending_result,:sell)
       @ending_result = apply_fiat_fee(@ending_result)
       # @ending.base.amount = @middle_result
