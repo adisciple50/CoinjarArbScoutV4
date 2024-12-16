@@ -4,6 +4,7 @@ require_relative "currency_factory"
 require_relative "product_factory"
 require_relative "chain_factory"
 require 'date'
+require "awesome_print"
 
 STAKE = 200.00
 START_CURRENCY = "GBP"
@@ -38,7 +39,7 @@ while true
   last_winner = winner
   profit = last_winner.profit
   if profit > 0
-    puts last_winner.to_s
+    ap last_winner.to_h
     File.write("winners/#{DateTime.now.to_s}.txt",last_winner.to_s,mode:'a')
     system('gst-play-1.0 /usr/share/sounds/Yaru/stereo/system-ready.oga')
   end

@@ -173,4 +173,30 @@ class Chain
     \n====
     "
   end
+  def to_h
+    if @start_trade_direction == :buy
+      start_price = @start.ask
+    else
+      start_price = @start.bid
+    end
+    if @middle_trade_direction == :buy
+      middle_price = @middle.ask
+    else
+      middle_price = @middle.bid
+    end
+    if @ending_trade_direction == :buy
+      ending_price = @ending.ask
+    else
+      ending_price = @ending.bid
+    end
+
+    {
+      stake:@start.pair.amount.to_f,
+      result:@ending_result,
+      profit:@profit,
+      start_id:@start.id,start_price:start_price,start_display_currency:@start.display_currency,start_amount:@start_amount,start_trade_direction:@start_trade_direction,start_result:@start_result,
+      middle_id:@middle.id,middle_price:middle_price,middle_display_currency:@middle.display_currency,middle_amount:@middle_amount,middle_trade_direction:@middle_trade_direction,middle_result:@middle_result,
+      ending_id:@ending.id,ending_price:ending_price,ending_display_currency:@ending.display_currency,ending_amount:@ending_amount,ending_trade_direction:@ending_trade_direction,ending_result:@ending_result
+    }
+  end
 end
