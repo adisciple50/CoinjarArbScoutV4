@@ -165,9 +165,9 @@ class Chain
     \nstake: #{@start.pair.amount.to_f}
     \nfinal result:#{@ending_result}
     \nprofit: #{@profit}
-    \n- start id: #{@start.id} - price: #{start_price} - representative currency #{@start.display_currency} - amount in representative currency:#{@start_amount} - transaction direction: #{@start_trade_direction} - start result:#{@start_result}
-    \n- middle id: #{@middle.id} - price: #{middle_price} -  representative currency #{@middle.display_currency} - amount in representative currency:#{@middle_amount} - transaction direction: #{@middle_trade_direction} - middle result:#{@middle_result} -
-    \n- end id: #{@ending.id} - price: #{ending_price} -  representative currency #{@ending.display_currency} - amount in representative currency:#{@ending_amount} - transaction direction: #{@ending_trade_direction} - end result:#{@ending_result}
+    \n- start id: #{@start.id} - price: #{start_price} - representative currency #{@start.display_currency} - amount in opposing currency to the display currency:#{@start_amount} - transaction direction: #{@start_trade_direction} - start result minus dust and fees:#{@start_result}
+    \n- middle id: #{@middle.id} - price: #{middle_price} -  representative currency #{@middle.display_currency} - amount in opposing currency to the display currency:#{@middle_amount} - transaction direction: #{@middle_trade_direction} - middle result start result minus dust and fees:#{@middle_result}
+    \n- end id: #{@ending.id} - price: #{ending_price} -  representative currency #{@ending.display_currency} - amount in opposing currency to the display currency:#{@ending_amount} - transaction direction: #{@ending_trade_direction} - end result start result minus dust and fees:#{@ending_result}
     \n====
     "
   end
