@@ -3,6 +3,7 @@ require_relative "public_client"
 require_relative "currency_factory"
 require_relative "product_factory"
 require_relative "chain_factory"
+require 'date'
 
 STAKE = 200.00
 START_CURRENCY = "GBP"
@@ -15,7 +16,7 @@ profit = 0
 
 SPINNER = ["+","x"]
 spinner_count = 0
-while profit <= 0
+while true
   puts "Scanning ...#{SPINNER[spinner_count]}"
   if spinner_count >= SPINNER.count - 1
     spinner_count = 0
@@ -34,10 +35,11 @@ while profit <= 0
   chains = chain_factory.chains
   sorted = chains.sort {|a,b| a.profit <=> b.profit}
   winner = sorted[-1]
-  puts winner.to_s
   last_winner = winner
   profit = last_winner.profit
+  if profit > 0
+    puts last_winner.to_s
+    File.write("winners/#{DateTime.now.to_s}.txt",last_winner.to_s,mode:'a')
+    system('gst-play-1.0 /usr/share/sounds/Yaru/stereo/system-ready.oga')
+  end
 end
-puts last_winner.to_s
-File.write('winner.txt',last_winner.to_s,mode:'a')
-system('gst-play-1.0 /usr/share/sounds/Yaru/stereo/system-ready.oga')
