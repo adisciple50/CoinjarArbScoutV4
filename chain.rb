@@ -1,5 +1,6 @@
+require_relative = 'helpers'
 class Chain
-  attr_reader :profit
+  attr_reader :profit,:start_trade_direction,:middle_trade_direction,:ending_trade_direction,:start_amount,:middle_amount,:ending_amount
   def initialize(start_product,middle_product,end_product)
     @start = start_product
     @start_trade_direction = :buy
