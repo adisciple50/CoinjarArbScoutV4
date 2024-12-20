@@ -20,6 +20,7 @@ SPINNER = ["+","x"]
 spinner_count = 0
 spinner = TTY::Spinner.new("Scanning [:spinner]", format: :bouncing)
 while true
+  begin
   spinner.auto_spin
   all_products_parsed_json = PublicClient.new.get_all_products
   currency_factory = CurrencyFactory.new(all_products_parsed_json,fiat_currency_object)
@@ -40,5 +41,8 @@ while true
     ap last_winner.to_h
     File.write("winners/#{DateTime.now.to_s}.json",JSON.unparse(last_winner.to_h),mode:'a')
     system('gst-play-1.0 /usr/share/sounds/Yaru/stereo/system-ready.oga')
+  end
+  rescue
+    next
   end
 end
