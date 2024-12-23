@@ -1,0 +1,20 @@
+
+    
+
+    
+====
+    
+stake: 200.0
+    
+final result:200.159537103
+    
+profit: 0.15953710299999102
+    
+- start id: SUIGBP - price: 3.872 - representative currency GBP - amount in representative currency:51.65289256198347 - transaction direction: buy - start result:51.60123966942149
+    
+- middle id: SUIUSDC - price: 4.91 -  representative currency USDC - amount in representative currency:253.36091 - transaction direction: sell - middle result:253.10754909 -
+    
+- end id: USDCGBP - price: 0.7916 -  representative currency GBP - amount in representative currency:200.359897 - transaction direction: sell - end result:200.159537103
+    
+====
+    

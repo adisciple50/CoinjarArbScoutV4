@@ -1,0 +1,24 @@
+
+    
+
+    
+====
+    
+stake: 200.0
+    
+final result:200.3817928248
+    
+profit: 0.38179282479998733
+    
+           |       |     |currency |amount in opposing currency    |result minus |
+    
+           |id     |price|for price|to currency for price|direction|dust and fees|
+    
+- start    |ENSGBP |39.62  |GBP |5.047955577990914|buy|5.042907622412923
+    
+- middle   |ENSUSDC|50.62 |USDC|255.1248|sell|254.8696752
+    
+- end      |USDCGBP|0.787 |GBP|200.5823752 |sell|200.3817928248
+    
+====
+    
