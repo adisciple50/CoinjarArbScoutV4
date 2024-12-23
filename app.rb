@@ -43,6 +43,7 @@ while true
     system('gst-play-1.0 /usr/share/sounds/Yaru/stereo/system-ready.oga')
   end
   rescue
+    sleep 5
     next
   end
 end
