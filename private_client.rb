@@ -4,9 +4,9 @@ class PrivateClient < CoinjarClient
   # {oid:"number"}
   base_uri "https://api.exchange.coinjar.com"
   def place_order(product_id,price,buy_or_sell,size,type = "LMT")
-    JSON.parse(self.class.post('orders',body: JSON.generate({"type" => type.to_s,"size" => size.to_s,"product_id" => product_id.to_s,"side" => buy_or_sell.to_s,"price" => price.to_s})).to_s)
+    JSON.parse(self.class.post('orders',body: JSON.generate({"type" => type.to_s,"size" => size.to_s,"product_id" => product_id.to_s,"side" => buy_or_sell.to_s,"price" => price.to_s})).to_s).to_h
   end
   def get_order(order_id)
-    JSON.parse(self.class.get("orders/#{order_id.to_s}").to_s).to_h
+    JSON.parse(self.class.get("/orders/#{order_id.to_s}").to_s).to_h
   end
 end
