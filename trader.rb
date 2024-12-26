@@ -2,11 +2,13 @@ require_relative 'helpers'
 require_relative 'private_client'
 require_relative 'private_sandbox'
 require 'json'
+require 'pstore'
 class Trader
   include Helpers
   attr_accessor :chain
   def initialize(winner_builder_to_trade,testing=true)
     @chain = winner_builder_to_trade
+    @status_store = PStore.new('status.pstore')
     if testing
       @coinbase = PrivateSandbox.new
     else
@@ -14,30 +16,27 @@ class Trader
     end
   end
   def set_status(status_code)
-     File.new('./status.json','w').write(JSON.unparse({'status':status_code}))
-    # file.close
+    @status_store.transaction do
+      @status_store[:code] = status_code
+    end
   end
   def get_status
     status = ''
-    File.open('./status.json') do |file|
-      to_parse = file.read
-      status = JSON.parse(to_parse)
-      # puts status
-      file.close
+    @status_store.transaction do
+      status = @status_store[:code]
     end
-    puts status["status"]
-    status["status"]
+    status
   end
   def wait_until_trade_is_complete(order)
     order = @coinbase.get_order(order["oid"])
     status = order["status"]
-    puts JSON.parse order
+    puts JSON.parse order.to_s
     while status != "filled"
       order = @coinbase.get_order(order["oid"])
       puts "order status is\n ===="
-      puts JSON.parse order
-      status = order["status"]
-      wait 1
+      puts JSON.parse order.to_s
+      status = order["status"].to_s
+      sleep 1
     end
   end
   def run
