@@ -3,7 +3,7 @@ class PrivateSandbox < CoinjarClient
   headers 'Authorization' => "Bearer #{ENV['COINJAR_SANDBOX']}",'accept' => 'application/json','Content-Type' => 'application/json'
   base_uri "https://api.exchange.coinjar-sandbox.com"
 
-  def create_order(product_id,price,buy_or_sell,size,type = "LMT")
+  def place_order(product_id,price,buy_or_sell,size,type = "LMT")
     JSON.parse(self.class.post('/orders',body: JSON.generate({"type" => type.to_s,"size" => size.to_s,"product_id" => product_id.to_s,"side" => buy_or_sell.to_s,"price" => price.to_s})).to_s)
   end
   def get_order(order_id)
