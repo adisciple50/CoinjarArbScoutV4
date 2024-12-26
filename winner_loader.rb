@@ -7,7 +7,7 @@ class WinnerLoader
     @winners.each do |winner_file|
       open("./#{winner_file}") do |f|
         to_parse = f.read
-        @winners_h << JSON.parse(to_parse)
+        @winners_a << JSON.parse(to_parse).to_h
       end
     end
   end
