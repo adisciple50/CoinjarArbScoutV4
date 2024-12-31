@@ -48,19 +48,19 @@ class Trader
       set_status 1
     end
     if get_status == 1
-      @start_oid = @coinbase.place_order @chain.start,@chain.start_price,@chain.start_trade_direction,@chain.start_amount
+      @start_oid = @coinbase.place_order(@chain.start,@chain.start_price,@chain.start_trade_direction,@chain.start_amount)
       puts @start_oid
       wait_until_trade_is_complete(@start_oid)
       set_status 2
     end
     if get_status == 2
-      @middle_oid = @coinbase.place_order @chain.middle,@chain.middle_price,@chain.middle_trade_direction,@chain.middle_amount
+      @middle_oid = @coinbase.place_order(@chain.middle,@chain.middle_price,@chain.middle_trade_direction,@chain.middle_amount)
       puts @middle_oid
       wait_until_trade_is_complete(@middle_oid)
       set_status 3
     end
     if get_status == 3
-      @ending_oid = @coinbase.place_order @chain.ending,@chain.ending_price,@chain.ending_trade_direction,@chain.ending_amount
+      @ending_oid = @coinbase.place_order(@chain.ending,@chain.ending_price,@chain.ending_trade_direction,@chain.ending_amount)
       puts @ending_oid
       wait_until_trade_is_complete(@ending_oid)
     end

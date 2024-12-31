@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b3a5ff1e-a82f-404c-8bb3-1b0d2f7d6a29" name="Changes" comment="failproofing">
+      <change beforePath="$PROJECT_DIR$/app.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/private_client.rb" beforeDir="false" afterPath="$PROJECT_DIR$/private_client.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trader.rb" beforeDir="false" afterPath="$PROJECT_DIR$/trader.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trader_app.rb" beforeDir="false" afterPath="$PROJECT_DIR$/trader_app.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/winner_builder.rb" beforeDir="false" afterPath="$PROJECT_DIR$/winner_builder.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/winner_loader.rb" beforeDir="false" afterPath="$PROJECT_DIR$/winner_loader.rb" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Ruby File" />
+        <option value="Ruby Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2qK4Hpbd7nFynhxHKnrIuM6zNbu" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/trader_app.rb" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RunManager" selected="Ruby.trader">
+    <configuration name="IRB: CoinjarArbScoutV4" type="IrbRunConfigurationType" factoryName="IRB console" temporary="true">
+      <module name="CoinjarArbScoutV4" />
+      <IRB_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
+      <IRB_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <IRB_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <IRB_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <IRB_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" ENABLE_BRANCH_COVERAGE="true" ENABLE_FORKED_COVERAGE="true">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
+      <IRB_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$APPLICATION_HOME_DIR$/plugins/ruby/rb/testing/runner/irb.rb" />
+      <IRB_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="--simple-prompt --nomultiline --nocolorize" />
+      <IRB_RUN_CONFIG NAME="CONSOLE_TYPE" VALUE="IRB" />
+      <method v="2" />
+    </configuration>
+    <configuration name="scout" type="RubyRunConfigurationType" factoryName="Ruby">
+      <module name="CoinjarArbScoutV4" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$/" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" ENABLE_BRANCH_COVERAGE="true" ENABLE_FORKED_COVERAGE="true">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/app.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="trader" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
+      <module name="CoinjarArbScoutV4" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <envs>
+        <env name="COINJAR_SANDBOX" value="HNDJgZKWC-T_swcHEHwMD5Ak9h8rRDTeaOX5hZ8dk2E" />
+        <env name="COINJAR_TRADES" value="kgStpKCLoKS4bDsEo1U4oNR6K1aOc7HqF3-Egp0uQp8" />
+      </envs>
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" ENABLE_BRANCH_COVERAGE="true" ENABLE_FORKED_COVERAGE="true">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/trader_app.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Ruby.scout" />
+      <item itemvalue="Ruby.trader" />
+      <item itemvalue="Ruby Console.IRB: CoinjarArbScoutV4" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Ruby.trader" />
+        <item itemvalue="Ruby Console.IRB: CoinjarArbScoutV4" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpringUtil" SPRING_PRE_LOADER_OPTION="true" RAKE_SPRING_PRE_LOADER_OPTION="true" RAILS_SPRING_PRE_LOADER_OPTION="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b3a5ff1e-a82f-404c-8bb3-1b0d2f7d6a29" name="Changes" comment="" />
+      <created>1734397850800</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1734397850800</updated>
+      <workItem from="1734397855742" duration="6305000" />
+      <workItem from="1734654201230" duration="497000" />
+      <workItem from="1734975950998" duration="1682000" />
+      <workItem from="1735236276088" duration="16454000" />
+      <workItem from="1735613035332" duration="6358000" />
+    </task>
+    <task id="LOCAL-00001" summary="added spinner">
+      <created>1734399987503</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1734399987503</updated>
+    </task>
+    <task id="LOCAL-00002" summary="to handle the connection drops">
+      <created>1734654340880</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1734654340880</updated>
+    </task>
+    <task id="LOCAL-00003" summary="now i just need the trader app and the trade loader.">
+      <created>1735236649826</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1735236649826</updated>
+    </task>
+    <task id="LOCAL-00004" summary="loader is done and deleted files using old winner format. theres always more and they werent the best.">
+      <created>1735243808880</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1735243808880</updated>
+    </task>
+    <task id="LOCAL-00005" summary="fixed an oversight">
+      <created>1735244184842</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1735244184842</updated>
+    </task>
+    <task id="LOCAL-00006" summary="finished struct like object builder / gypsy wagon">
+      <created>1735255823973</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1735255823973</updated>
+    </task>
+    <task id="LOCAL-00007" summary="wip">
+      <created>1735255851803</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1735255851804</updated>
+    </task>
+    <task id="LOCAL-00008" summary="homogenised private sandbox to match private client">
+      <created>1735255912771</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1735255912771</updated>
+    </task>
+    <task id="LOCAL-00009" summary="we are now in beta with the trader complete">
+      <created>1735256869712</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1735256869712</updated>
+    </task>
+    <task id="LOCAL-00010" summary="now works asynchronously with the scout">
+      <created>1735257407165</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1735257407165</updated>
+    </task>
+    <task id="LOCAL-00011" summary="failproofing">
+      <created>1735259224952</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1735259224952</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added spinner" />
+    <MESSAGE value="to handle the connection drops" />
+    <MESSAGE value="now i just need the trader app and the trade loader." />
+    <MESSAGE value="loader is done and deleted files using old winner format. theres always more and they werent the best." />
+    <MESSAGE value="fixed an oversight" />
+    <MESSAGE value="finished struct like object builder / gypsy wagon" />
+    <MESSAGE value="wip" />
+    <MESSAGE value="homogenised private sandbox to match private client" />
+    <MESSAGE value="we are now in beta with the trader complete" />
+    <MESSAGE value="now works asynchronously with the scout" />
+    <MESSAGE value="failproofing" />
+    <option name="LAST_COMMIT_MESSAGE" value="failproofing" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/CoinjarArbScoutV4@IRB__CoinjarArbScoutV4.rcov" NAME="IRB: CoinjarArbScoutV4 Coverage Results" MODIFIED="1734402146206" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="CoinjarArbScoutV4" />
+    <SUITE FILE_PATH="coverage/CoinjarArbScoutV4@trader.rcov" NAME="trader Coverage Results" MODIFIED="1735618566968" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="CoinjarArbScoutV4" />
+    <SUITE FILE_PATH="coverage/CoinjarArbScoutV4@Unnamed.rcov" NAME="Unnamed Coverage Results" MODIFIED="1734398020494" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" MODULE_NAME="CoinjarArbScoutV4" />
+  </component>
+</project>

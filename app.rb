@@ -16,7 +16,6 @@ fiat_currency_object = Currency.new(START_CURRENCY,STAKE)
 last_winner = nil
 profit = 0
 
-SPINNER = ["+","x"]
 spinner_count = 0
 spinner = TTY::Spinner.new("Scanning [:spinner]", format: :bouncing)
 while true

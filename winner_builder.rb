@@ -3,6 +3,10 @@ require_relative 'currency'
 class WinnerBuilder
   attr_reader :start,:start_price,:start_trade_direction,:start_amount,:middle,:middle_price,:middle_amount,:middle_trade_direction,:ending,:ending_price,:ending_amount,:ending_trade_direction
   def initialize(winner_hash)
+    store = PStore.new "status.pstore"
+    store.transaction do
+      store[:winner_file] = winner_hash["filename"]
+    end
     @stake = winner_hash["stake"]
     @amount = winner_hash["amount"]
     @start = winner_hash["start_id"]
